@@ -12,7 +12,7 @@ const listAllApiKey = () => {
 
 const generateImg = async (keyword, apiKey) => {
   console.log("using key ", apiKey);
-  let response;
+  let response = null;
 
   const generate = await fetch(
     `https://api.limewire.com/api/image/generation`,
@@ -40,7 +40,7 @@ const generateImg = async (keyword, apiKey) => {
 const generate = async (req, res) => {
     const keyword = req?.body?.keyword;
     const apiKeys = listAllApiKey();
-    let generateImgRes;
+    let generateImgRes = null;
   
     for (let i = 0; i < apiKeys.length; i++) {
       const key = apiKeys[i];
